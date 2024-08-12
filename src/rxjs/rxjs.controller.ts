@@ -7,7 +7,7 @@ export class RxjsController {
   constructor(private rxjsService: RxjsService) {}
 
   @Get("repositories/")
-  async repositories(@Query() { text, hub }: IParamText) {
+  async repositories(@Query() { text, hub }: IParamText): Promise<any[]> {
     return await this.rxjsService.searchRepositories(text, hub);
   }
 }
